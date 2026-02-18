@@ -3,117 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yujinrawfeed | Yujinmulsan Co. Ltd</title>
+  <title>Yujin Mulsan - Frozen Raw Feed</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 1200px; margin: auto; padding: 20px; }
-    .hero { position: relative; }
-    .hero img { width: 100%; height: 50vh; object-fit: cover; }
-    .hero-text {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.4);
-      color: white; text-align: center;
-      padding: 20px;
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
+    body { line-height:1.6; color:#333; }
+
+    header {
+      background:#0d3b66;
+      color:white;
+      padding:20px 40px;
+      text-align:center;
+      position:relative;
     }
-    .hero-text h1 { font-size: 2rem; }
-    .section-dark { background: #0f2a44; color: white; text-align: center; padding: 60px 20px; }
-    .section-dark h2 { font-size: 2rem; margin-bottom: 15px; }
-    .about { display: flex; flex-wrap: wrap; gap: 30px; padding: 60px 20px; }
-    .about-text, .about-img { flex: 1 1 400px; }
-    .about-img img { width: 100%; border-radius: 12px; }
-    .card { background: #f5f7fa; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 20px; }
-    footer { background: #111; color: #aaa; text-align: center; padding: 20px; font-size: 0.9rem; }
-    .lang-toggle { text-align: right; padding: 15px 20px; }
-    .lang-toggle button { padding: 6px 12px; margin-left: 5px; cursor: pointer; }
-    @media (max-width: 768px) {
-      .hero-text h1 { font-size: 1.4rem; }
-      .section-dark h2 { font-size: 1.5rem; }
+
+    .lang-buttons {
+      position:absolute;
+      top:20px;
+      right:40px;
+    }
+
+    .lang-buttons button {
+      margin-left:5px;
+      padding:6px 10px;
+      border:none;
+      cursor:pointer;
+      border-radius:4px;
+      font-weight:bold;
+    }
+
+    .hero {
+      height:70vh;
+      background:url("images/createdimage_flounders.png") center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      text-align:center;
+    }
+
+    .hero h2 {
+      font-size:40px;
+      background:rgba(0,0,0,0.5);
+      padding:20px 40px;
+      border-radius:8px;
+    }
+
+    section {
+      padding:60px 10%;
+      text-align:center;
+    }
+
+    section h3 {
+      margin-bottom:25px;
+      font-size:26px;
+      color:#0d3b66;
+    }
+
+    .about-text {
+      max-width:900px;
+      margin:0 auto;
+      font-size:18px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .grid img {
+      width:100%;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background:#0d3b66;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="lang-toggle">
+<header>
+  <h1>YUJIN MULSAN</h1>
+  <p id="subtitle">Premium Frozen Raw Feed Supplier</p>
+
+  <div class="lang-buttons">
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('ko')">KR</button>
+    <button onclick="setLang('ja')">JP</button>
+    <button onclick="setLang('zh')">CN</button>
   </div>
+</header>
 
-  <div class="hero">
-    <img src="images/olive-flounder.jpg" alt="Olive flounder lying on seabed" />
-    <div class="hero-text">
-      <h1 id="heroTitle">Premium Aquaculture Feed Supply</h1>
-    </div>
+<!-- Hero -->
+<div class="hero">
+  <h2 id="heroText">High Quality Frozen Raw Feed</h2>
+</div>
+
+<!-- Company Introduction -->
+<section>
+  <h3 id="aboutTitle">About Us</h3>
+  <p id="aboutText" class="about-text">
+    As a specialized raw feed supplier, we have reliably supplied approximately 20,000 tons annually to land-based flounder farms throughout Korea for over 30 years, positioning ourselves as a trusted partner in aquaculture.
+  </p>
+</section>
+
+<!-- Container Section -->
+<section>
+  <h3 id="section1">Container Loading & Packaging</h3>
+  <div class="grid">
+    <img src="images/frozencontainers.jpg" alt="Frozen Feed in Container">
+    <img src="images/containers.png" alt="Container Shipment">
   </div>
+</section>
 
-  <section class="section-dark">
-    <h2 id="companyName">Yujinmulsan Co. Ltd</h2>
-    <p id="tagline">Wholesale Supplier of Frozen Seafood for Land-Based Olive Flounder Farms</p>
-  </section>
-
-  <div class="container about">
-    <div class="about-text">
-      <h2 id="aboutTitle">About Us</h2>
-      <p id="aboutText1">
-        Yujinmulsan Co. Ltd is a specialized supplier of frozen seafood products for aquaculture feed, with over 30 years of industry experience in South Korea.
-      </p>
-      <br>
-      <p id="aboutText2">
-        We supply approximately 20,000 metric tons of frozen seafood annually to land-based aquaculture farms across Korea.
-      </p>
-    </div>
-    <div class="about-img">
-      <img src="images/aquaculture-farm.jpg" alt="Land-based aquaculture farm" />
-    </div>
+<!-- Product Section -->
+<section>
+  <h3 id="section2">Our Products</h3>
+  <div class="grid">
+    <img src="images/frozensardine.jpg" alt="Frozen Sardine">
   </div>
+</section>
 
-  <div class="container">
-    <div class="card">
-      <h2 id="contactTitle">Contact</h2>
-      <p id="contactText">For business inquiries, please contact us via email below.</p>
-      <p><strong>yujinmulsan@gmail.com</strong></p>
-    </div>
+<footer id="footerText">
+  © 2026 Yujin Mulsan Co., Ltd. All Rights Reserved.
+</footer>
 
-    <div class="card">
-      <h2 id="locationTitle">Location</h2>
-      <p id="address">Room 322, LG Marine Tower, Nambumin-dong, Seo-gu, Busan, Republic of Korea</p>
-    </div>
-  </div>
+<script>
+const translations = {
+  en: {
+    subtitle: "Premium Frozen Raw Feed Supplier",
+    hero: "High Quality Frozen Raw Feed",
+    section1: "Container Loading & Packaging",
+    section2: "Our Products",
+    aboutTitle: "About Us",
+    aboutText: "As a specialized raw feed supplier, we have reliably supplied approximately 20,000 tons annually to land-based flounder farms throughout Korea for over 30 years, positioning ourselves as a trusted partner in aquaculture.",
+    footer: "© 2026 Yujin Mulsan Co., Ltd. All Rights Reserved."
+  },
+  ko: {
+    subtitle: "프리미엄 냉동 생사료 전문 공급업체",
+    hero: "고품질 냉동 생사료",
+    section1: "컨테이너 적재 및 포장",
+    section2: "제품 소개",
+    aboutTitle: "회사 소개",
+    aboutText: "30년간 대한민국 육상 광어 양식장 곳곳에 매년 2만 톤 가량을 안정적으로 공급해 온 생사료 전문 업체로서, 기르는 어업의 동반자를 자처합니다.",
+    footer: "© 2026 유진물산. All Rights Reserved."
+  },
+  ja: {
+    subtitle: "高品質冷凍生餌専門サプライヤー",
+    hero: "高品質冷凍生餌",
+    section1: "コンテナ積載および包装",
+    section2: "製品紹介",
+    aboutTitle: "会社紹介",
+    aboutText: "30年以上にわたり、韓国全国の陸上ヒラメ養殖場へ年間約2万トンを安定供給してきた生餌専門企業として、養殖業の信頼できるパートナーであり続けます。",
+    footer: "© 2026 Yujin Mulsan Co., Ltd. 無断転載禁止"
+  },
+  zh: {
+    subtitle: "优质冷冻鲜饵供应商",
+    hero: "高品质冷冻鲜饵",
+    section1: "集装箱装载与包装",
+    section2: "产品介绍",
+    aboutTitle: "公司简介",
+    aboutText: "作为一家专业生鲜饵料供应商，30年来我们每年稳定向韩国各地陆基比目鱼养殖场供应约2万吨，致力于成为养殖业值得信赖的合作伙伴。",
+    footer: "© 2026 Yujin Mulsan Co., Ltd. 版权所有"
+  }
+};
 
-  <footer>
-    © <span id="year"></span> Yujinmulsan Co. Ltd. All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function setLang(lang) {
-      if (lang === 'ko') {
-        document.getElementById('heroTitle').textContent = '프리미엄 양식 사료 공급 전문 기업';
-        document.getElementById('companyName').textContent = '유진물산';
-        document.getElementById('tagline').textContent = '육상 광어 양식장용 냉동 수산물 도매 전문';
-        document.getElementById('aboutTitle').textContent = '회사 소개';
-        document.getElementById('aboutText1').textContent = '유진물산은 30년의 역사를 지닌 냉동 수산물 공급 전문 기업입니다.';
-        document.getElementById('aboutText2').textContent = '연간 약 20,000톤 규모의 냉동 수산물을 국내 육상 양식장에 공급하고 있습니다.';
-        document.getElementById('contactTitle').textContent = '문의';
-        document.getElementById('contactText').textContent = '사업 문의 및 거래 상담은 아래 이메일로 연락 주십시오.';
-        document.getElementById('locationTitle').textContent = '회사 위치';
-        document.getElementById('address').textContent = '부산광역시 서구 남부민동 LG마린타워 322호';
-      } else {
-        document.getElementById('heroTitle').textContent = 'Premium Aquaculture Feed Supply';
-        document.getElementById('companyName').textContent = 'Yujinmulsan Co. Ltd';
-        document.getElementById('tagline').textContent = 'Wholesale Supplier of Frozen Seafood for Land-Based Olive Flounder Farms';
-        document.getElementById('aboutTitle').textContent = 'About Us';
-        document.getElementById('aboutText1').textContent = 'Yujinmulsan Co. Ltd is a specialized supplier of frozen seafood products for aquaculture feed, with over 30 years of industry experience in South Korea.';
-        document.getElementById('aboutText2').textContent = 'We supply approximately 20,000 metric tons of frozen seafood annually to land-based aquaculture farms across Korea.';
-        document.getElementById('contactTitle').textContent = 'Contact';
-        document.getElementById('contactText').textContent = 'For business inquiries, please contact us via email below.';
-        document.getElementById('locationTitle').textContent = 'Location';
-        document.getElementById('address').textContent = 'Room 322, LG Marine Tower, Nambumin-dong, Seo-gu, Busan, Republic of Korea';
-      }
-    }
-  </script>
+function setLang(lang) {
+  document.getElementById("subtitle").innerText = translations[lang].subtitle;
+  document.getElementById("heroText").innerText = translations[lang].hero;
+  document.getElementById("section1").innerText = translations[lang].section1;
+  document.getElementById("section2").innerText = translations[lang].section2;
+  document.getElementById("aboutTitle").innerText = translations[lang].aboutTitle;
+  document.getElementById("aboutText").innerText = translations[lang].aboutText;
+  document.getElementById("footerText").innerText = translations[lang].footer;
+}
+</script>
 
 </body>
 </html>
